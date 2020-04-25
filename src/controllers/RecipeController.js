@@ -34,7 +34,7 @@ module.exports = {
                 return response.status(404).json({message: 'No recipes found.'})
             }
 
-            const recipes = recipesPuppyResponse.data.results.map(async (recipe) => {
+            const recipesWithGif = recipesPuppyResponse.data.results.map(async (recipe) => {
                     const giphyResponse = await giphyService.findGifByWord(recipe.title);
                     return {
                         title: recipe.title,
@@ -45,14 +45,14 @@ module.exports = {
                 });
 
             
-            recipePromisses = await Promise.all(recipes);
+            const recipes = await Promise.all(recipesWithGif);
             
-            return response.json({keywords, recipePromisses});
+            return response.json({keywords, recipes});
 
         }
 
         catch (error) {
-            return response.status(404).json({error: 'Request processing failed.'})
+            return response.status(404).json({error: 'Request processing has failed or some of the external services are unavailable.'});
         }
     }
 
