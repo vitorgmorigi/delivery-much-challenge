@@ -38,7 +38,7 @@ Estrutura da resposta:
 
 ### Clonar projeto do GitHub
 ```
-https://github.com/vitorgmorigi/delivery-much-challenge.git
+git clone https://github.com/vitorgmorigi/delivery-much-challenge.git
 
 ```
 
