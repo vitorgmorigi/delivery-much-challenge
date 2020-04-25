@@ -12,3 +12,6 @@ app.use(routes);
 app.listen(PORT, () => {
     console.log(`Aplicattion running at port: ${PORT}`)
 });
+
+
+module.exports = app;
