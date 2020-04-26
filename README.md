@@ -62,7 +62,10 @@ Para gerar uma GIPHY_API_KEY basta acessar o site https://developers.giphy.com/d
  ```
  - Rodar pelo Docker
  ```
- docker-compose up -d
+ docker build -t vitor/dmchallenge .
+ ```
+ ```
+ docker run -p 3000:3000 -d vitor/dmchallenge
  ```
  
  ### Executar os testes unitários
